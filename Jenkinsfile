@@ -22,11 +22,13 @@ pipeline{
        }
       }
       stage ("Build"){
+       steps{
+        script {
         if ( (sh ('cat result')) > 60)
        {
           echo "Yes"
-       } 
-      }
+       } }
+      }}
      }
     }   
    }
