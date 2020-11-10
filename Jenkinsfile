@@ -10,10 +10,7 @@ pipeline{
       {
         steps{
          sh './test.sh'
-         script{
-           def output = readResult file: 'result'
-           env.RESULT = output.RESULT
-          }
+         RESULT = "${sh(script: 'cat result', returnStdout: true)}"
           echo "${env.RESULT}"
          }
        }
