@@ -1,7 +1,7 @@
 pipeline{
   environment{
-  RESULT = 0
-  n = 0
+  RESULT = 20
+  n = 10
    }
   agent any
   stages{
