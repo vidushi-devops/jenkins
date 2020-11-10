@@ -11,7 +11,6 @@ pipeline{
       {
         steps{
          sh './test.sh'
-         env.n = sh 'cat result'
          script{
          env.n = sh 'cat result'
          env.RESULT = sh(script: 'cat result', returnStdout: true).trim()
