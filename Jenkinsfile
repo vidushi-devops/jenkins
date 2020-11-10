@@ -10,7 +10,7 @@ pipeline{
       stage ("Test")
       {
         steps{
-         bash './test.sh'
+         sh './test.sh'
     
      //    script{
      //    n = sh(script: 'cat result', resturnStatus: true)
