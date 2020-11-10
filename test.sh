@@ -4,8 +4,8 @@ do
   echo "Test case $i : Passed"
   sleep 2s
 done
-n=80
-if [ $n >= 70 ]
+n=60
+if [ $n -ge 70 ]
 then
 	echo "Continue"
 	exit 0
