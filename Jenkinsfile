@@ -11,15 +11,21 @@ pipeline{
       {
         steps{
          sh './test.sh'
-         script{
-         env.n = sh(script: 'cat result', resturnStatus: true)
-         env.RESULT = sh(script: 'cat result', returnStdout: true).trim()
-       } 
-       sh 'echo $n'
-       sh 'echo $RESULT'
-       echo "${env.RESULT}" 
-       echo "${env.n}"
+    
+     //    script{
+     //    n = sh(script: 'cat result', resturnStatus: true)
+     //    env.RESULT = sh(script: 'cat result', returnStdout: true)
+     //  } 
+     //  echo "${env.RESULT}" 
+     //  echo "${env.n}"
+    
        }
+      }
+      stage ("Build"){
+        if ( sh 'cat result' > 60)
+       {
+          echo "Yes"
+       } 
       }
      }
     }   
