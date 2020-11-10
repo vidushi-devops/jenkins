@@ -10,10 +10,10 @@ pipeline{
       {
         steps{
          sh './test.sh'
-         environment{
-         RESULT = "${sh(script: 'cat result', returnStdout: true)}"
-         } 
-        echo "${env.RESULT}" 
+         script{
+         env.RESULT = "${sh(script: 'cat result', returnStdout: true)}"
+       } 
+       echo "${env.RESULT}" 
        }
       }
      }
