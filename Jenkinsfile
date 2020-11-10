@@ -22,7 +22,7 @@ pipeline{
        }
       }
       stage ("Build"){
-        if ( sh 'cat result' > 60)
+        if ( (sh ('cat result')) > 60)
        {
           echo "Yes"
        } 
